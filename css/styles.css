@@ -29,7 +29,6 @@ button {
     cursor: pointer;
     font-family: inherit;
 } 
-
 /*    Підреслювання  вимк    */
 .link {
     text-decoration: none;
@@ -160,6 +159,9 @@ nav a {
 
 
 .mail-link {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -171,6 +173,9 @@ nav a {
 /*    Посилання на phone    */
 
 .phone-number-link {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
@@ -192,9 +197,15 @@ nav a {
 }
 
 .mail-item:hover,
-.phone-item:hover .icons-header {
+.mail-item:focus,
+.phone-item:hover,
+.phone-item:focus .icons-header {
     fill: var(--hover-focus-color-blue);
+}
 
+.mail-link:focus,
+.phone-number-link:focus .icons-header {
+    fill: #188CE8;
 }
 
 /*    MAIN section--HERO SECTION    */
@@ -783,15 +794,12 @@ color: #FFFFFF;
 .close-btn:hover .close-btn-icon {
     fill:var(--hover-focus-color-blue);
 }
-/* Form footer */
+/* form footer */
 
 .footer-booking-form {
-
-}
-
-.footer-submit {
     display: flex;
     flex-direction: column;
+    
 }
 
 .title-submit {
@@ -813,7 +821,13 @@ color: #FFFFFF;
     border-radius: 4px;
     background-color: transparent;
     padding-left: 16px;
+    color: #FFFFFF;
+    cursor: pointer;
     
+    
+}
+.footer-form-input:focus {
+    outline: inherit;
 }
 
 
@@ -893,7 +907,10 @@ textarea {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     resize: none;
+    color: #2F303A;
 }
+
+/* CHECKBOX */
 
 .chekbox-form-fild {
     position: relative;
@@ -905,7 +922,7 @@ textarea {
     gap: 8px;
     margin-top: 20px;
     margin-bottom: 30px;
-
+    cursor: pointer;
 }
 .checkbox {
     position: absolute;
@@ -962,18 +979,29 @@ textarea {
 
 
 /*  */
+.booking-form-fild:hover .icon {
+    fill: #2196F3;
+} 
+
+.modal-form-input:hover,
+.modal-form-input:focus  {
+    border-color: #188CE8;
+    outline: #188CE8;
+} 
+.modal-form-input:focus ~ .icon {
+    fill: #2196F3;
+}
+
+textarea:hover, 
+textarea:focus {
+    border-color: #188CE8;
+    outline: #188CE8;
+}
 
 .modal-form-button {
     margin: auto;
     background: #2196F3;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
-
-}
-.booking-form-fild:hover .icon {
-    fill: #2196F3;
-    
-}
-.modal-form-input:hover {
-    border-color: #188CE8;
+    cursor: pointer;
 }
